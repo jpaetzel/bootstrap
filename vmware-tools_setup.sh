@@ -35,7 +35,7 @@ cat > /usr/local/etc/pkg/repos/FreeBSD.conf <<EOF
 EOF
 
 env ASSUME_ALWAYS_YES=yes /usr/sbin/pkg update
-env ASSUME_ALWAYS_YES=yes /usr/sbin/pkg install open-vm-tools-nox11
+env ASSUME_ALWAYS_YES=yes /usr/sbin/pkg install open-vm-tools
 
 if [ -f /etc/rc.conf ]; then
 	grep -q vmware_guest /etc/rc.conf
