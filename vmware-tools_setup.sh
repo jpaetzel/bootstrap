@@ -39,7 +39,7 @@ fi
 
 pkg info ca_root_nss > /dev/null
 if [ $? -ne 0 ]; then
-	env ASSUME_ALWAYS_YES=yes /usr/sbin/pkg install ca_root_nss-3.32
+	env ASSUME_ALWAYS_YES=yes /usr/sbin/pkg install ca_root_nss
 fi
 
 cat > /usr/local/etc/pkg/repos/vmtools.conf <<EOF
