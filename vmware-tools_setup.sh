@@ -52,15 +52,15 @@ EOF
 
 cat > /usr/local/etc/pkg/repos/FreeBSD.conf <<EOF
 	   FreeBSD: {
-	       enabled: NO
+	       enabled: YES
 	   }
 EOF
 
 env ASSUME_ALWAYS_YES=yes /usr/sbin/pkg update
 if [ ${x11} -eq 1 ]; then
-	env ASSUME_ALWAYS_YES=yes /usr/sbin/pkg install open-vm-tools
+	env ASSUME_ALWAYS_YES=yes /usr/sbin/pkg install -r vmtools open-vm-tools
 else
-	env ASSUME_ALWAYS_YES=yes /usr/sbin/pkg install open-vm-tools-nox11
+	env ASSUME_ALWAYS_YES=yes /usr/sbin/pkg install -r vmtools open-vm-tools-nox11
 fi
 
 if [ -f /etc/rc.conf ]; then
